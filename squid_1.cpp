@@ -9,30 +9,30 @@ int main()
 	setGameOption(GameOption::GAME_OPTION_INVENTORY_BUTTON, false);
 	setGameOption(GameOption::GAME_OPTION_MESSAGE_BOX_BUTTON, false);
 
-	//½ÃÀÛ ¼¼ÆÃ
-	auto endgame = Scene::create("GameOver", "Images/³¡.png"); //°ÔÀÓ Å¬¸®¾î¿¡ ½ÇÆĞÇÑ È­¸é
-	auto giveup = Scene::create("°ÔÀÓ Á¾·á", "Images/giveup.png"); //°ÔÀÓÀ» Áßµµ Æ÷±âÇÑ È­¸é
-	auto scene1 = Scene::create("½ÃÀÛÈ­¸é", "Images/¹è°æ.png"); //¸ŞÀÎÈ­¸é
+	//ì‹œì‘ ì„¸íŒ…
+	auto endgame = Scene::create("GameOver", "Images/ë.png"); //ê²Œì„ í´ë¦¬ì–´ì— ì‹¤íŒ¨í•œ í™”ë©´
+	auto giveup = Scene::create("ê²Œì„ ì¢…ë£Œ", "Images/giveup.png"); //ê²Œì„ì„ ì¤‘ë„ í¬ê¸°í•œ í™”ë©´
+	auto scene1 = Scene::create("ì‹œì‘í™”ë©´", "Images/ë°°ê²½.png"); //ë©”ì¸í™”ë©´
 	auto startButton = Object::create("Images/start.png", scene1, 590, 70);
 	auto endButton = Object::create("Images/end.png", scene1, 590, 20);
-	//°ÔÀÓ1
-	auto scene2 = Scene::create("1¹ø°ÔÀÓ", "Images/¹è°æ2.png"); //°ÔÀÓ1 ¹è°æ
+	//ê²Œì„1
+	auto scene2 = Scene::create("1ë²ˆê²Œì„", "Images/ë°°ê²½2.png"); //ê²Œì„1 ë°°ê²½
 	auto nextlevel_1 = Object::create("Images/nextlevel_1.png", scene2, 250, 110, false);
 	auto nextlevel_2 = Object::create("Images/nextlevel_2.png", scene2, 643, 110, false);
-	//°ÔÀÓ2
-	auto game2s = Scene::create("2¹ø°ÔÀÓ", "Images/¹è°æ3.png"); //°ÔÀÓ2 ¹è°æ
-	auto game2 = Scene::create("2¹ø°ÔÀÓ", "Images/¹è°æ3.png"); //°ÔÀÓ2 ¹è°æ
-	auto game2_2 = Scene::create("2¹ø°ÔÀÓ", "Images/¹è°æ3.png"); //°ÔÀÓ2 ¹è°æ
-	auto game2_3 = Scene::create("2¹ø°ÔÀÓ", "Images/¹è°æ3.png"); //°ÔÀÓ2 ¹è°æ
-	//°ÔÀÓ3
-	auto game3s = Scene::create("3¹ø°ÔÀÓ", "Images/¹è°æ4.png"); //°ÔÀÓ3 ¹è°æ
-	auto game3 = Scene::create("3¹ø°ÔÀÓ", "Images/¹è°æ5.png"); //°ÔÀÓ3 ¹è°æ
-	//¿£µù
-	auto Final_s = Scene::create("¿£µù", "Images/Endding.png"); //¿£µù ¹è°æ
+	//ê²Œì„2
+	auto game2s = Scene::create("2ë²ˆê²Œì„", "Images/ë°°ê²½3.png"); //ê²Œì„2 ë°°ê²½
+	auto game2 = Scene::create("2ë²ˆê²Œì„", "Images/ë°°ê²½3.png"); //ê²Œì„2 ë°°ê²½
+	auto game2_2 = Scene::create("2ë²ˆê²Œì„", "Images/ë°°ê²½3.png"); //ê²Œì„2 ë°°ê²½
+	auto game2_3 = Scene::create("2ë²ˆê²Œì„", "Images/ë°°ê²½3.png"); //ê²Œì„2 ë°°ê²½
+	//ê²Œì„3
+	auto game3s = Scene::create("3ë²ˆê²Œì„", "Images/ë°°ê²½4.png"); //ê²Œì„3 ë°°ê²½
+	auto game3 = Scene::create("3ë²ˆê²Œì„", "Images/ë°°ê²½5.png"); //ê²Œì„3 ë°°ê²½
+	//ì—”ë”©
+	auto Final_s = Scene::create("ì—”ë”©", "Images/Endding.png"); //ì—”ë”© ë°°ê²½
 
 
 
-	//¸ŞÀÎÈ­¸é
+	//ë©”ì¸í™”ë©´
 	endButton->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
 		endgame->enter();
 		return true;
@@ -43,8 +43,8 @@ int main()
 		return true;
 		});
 
-	//Ã¹¹øÂ° °ÔÀÓ 
-	auto killer = Object::create("Images/ÀÎÇü.png", scene2, 1025, 73);
+	//ì²«ë²ˆì§¸ ê²Œì„ 
+	auto killer = Object::create("Images/ì¸í˜•.png", scene2, 1025, 73);
 	auto continueButton = Object::create("Images/continue.png", scene2, 1150, 40);
 	continueButton->hide();
 	auto timer1 = Timer::create(8.f);
@@ -66,16 +66,16 @@ int main()
 			nextlevel_1->show();
 			nextlevel_2->show();
 			timer1->stop();
-			showMessage("1´Ü°è Åë°ú");
+			showMessage("1ë‹¨ê³„ í†µê³¼");
 		}
 
 		nextlevel_1->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-			game2s->enter(); //°ÔÀÓ2·Î ÁøÇà
-			showMessage("ÀÌ¹ø °ÔÀÓÀº ¿µÈ­ ÄûÁîÀÔ´Ï´Ù.");
+			game2s->enter(); //ê²Œì„2ë¡œ ì§„í–‰
+			showMessage("ì´ë²ˆ ê²Œì„ì€ ì˜í™” í€´ì¦ˆì…ë‹ˆë‹¤.");
 			return true;
 			});
 		nextlevel_2->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-			giveup->enter(); //ÁßµµÆ÷±â
+			giveup->enter(); //ì¤‘ë„í¬ê¸°
 			return true;
 			});
 
@@ -84,89 +84,89 @@ int main()
 
 	timer1->setOnTimerCallback([&](TimerPtr timer)->bool {
 		endButton->show();
-		showMessage("½Ã°£ÃÊ°ú Å»¶ô!");
+		showMessage("ì‹œê°„ì´ˆê³¼ íƒˆë½!");
 		endgame->enter();
 		return true;
 		});
 
 
-	//µÎ¹øÂ° °ÔÀÓ : ÄûÁî
+	//ë‘ë²ˆì§¸ ê²Œì„ : í€´ì¦ˆ
 	auto startgame2 = Object::create("Images/start2.png", game2s, 400, 110);
 	startgame2->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		game2->enter(); //°ÔÀÓ2·Î ÁøÇà
-		showMessage("ÀÌ ¹è¿ìÀÇ ÀÌ¸§Àº ´Ù´Ï¿¤ Å©·¹ÀÌ±×ÀÌ´Ù.");
+		game2->enter(); //ê²Œì„2ë¡œ ì§„í–‰
+		showMessage("ì´ ë°°ìš°ì˜ ì´ë¦„ì€ ë‹¤ë‹ˆì—˜ í¬ë ˆì´ê·¸ì´ë‹¤.");
 		return true;
 		});
 	
 	
-	auto quiz1 = Object::create("Images/quiz1.png", game2, 300, 73); //1¹ø¹®Á¦ ±×¸²
-	auto quiz2 = Object::create("Images/quiz2.png", game2_2, 450, 73); //2¹ø¹®Á¦ ±×¸²
+	auto quiz1 = Object::create("Images/quiz1.png", game2, 300, 73); //1ë²ˆë¬¸ì œ ê·¸ë¦¼
+	auto quiz2 = Object::create("Images/quiz2.png", game2_2, 450, 73); //2ë²ˆë¬¸ì œ ê·¸ë¦¼
 	
 
-	//1¹ø¹®Á¦
+	//1ë²ˆë¬¸ì œ
 	auto O_button = Object::create("Images/O.png", game2, 450, 10);
 	O_button->setScale(.5f);
 	auto X_button = Object::create("Images/X.png", game2, 643, 10);
 	X_button->setScale(.5f);
 
 	O_button->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		game2_2->enter(); //2¹ø ¹®Á¦
-		showMessage("ÀÌ ¹è¿ìÀÇ ÀÌ¸§Àº ´Ù´Ï¿¤ ·¡µåÅ¬¸®ÇÁÀÌ´Ù.");
+		game2_2->enter(); //2ë²ˆ ë¬¸ì œ
+		showMessage("ì´ ë°°ìš°ì˜ ì´ë¦„ì€ ë‹¤ë‹ˆì—˜ ë˜ë“œí´ë¦¬í”„ì´ë‹¤.");
 		return true;
 		});
 	X_button->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		endgame->enter(); //Å»¶ô
+		endgame->enter(); //íƒˆë½
 		return true;
 		});
-	//2¹ø¹®Á¦
+	//2ë²ˆë¬¸ì œ
 	auto O_button2 = Object::create("Images/O.png", game2_2, 450, 10);
 	O_button2->setScale(.5f);
 	auto X_button2 = Object::create("Images/X.png", game2_2, 643, 10);
 	X_button2->setScale(.5f);
 	O_button2->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		game2_3->enter(); //3¹ø ¹®Á¦
-		showMessage("¿µÈ­ '007'ÀÇ Ãâ¿¬ÁøÀÌ ¾Æ´Ñ »ç¶÷À» °í¸£½Ã¿À.");
+		game2_3->enter(); //3ë²ˆ ë¬¸ì œ
+		showMessage("ì˜í™” '007'ì˜ ì¶œì—°ì§„ì´ ì•„ë‹Œ ì‚¬ëŒì„ ê³ ë¥´ì‹œì˜¤.");
 		return true;
 		});
 	X_button2->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		endgame->enter(); //Å»¶ô
+		endgame->enter(); //íƒˆë½
 		return true;
 		});
 
-	//3¹ø¹®Á¦, °í¸£±â
+	//3ë²ˆë¬¸ì œ, ê³ ë¥´ê¸°
 	auto q1 = Object::create("Images/q1.png", game2_3, 200, 220);
 	auto q2 = Object::create("Images/q2.png", game2_3, 450, 220);
 	auto q3 = Object::create("Images/q3.png", game2_3, 700, 220);
 	auto q4 = Object::create("Images/q4.png", game2_3, 950, 220);
 
 	q1->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		endgame->enter(); //Å»¶ô
+		endgame->enter(); //íƒˆë½
 		return true;
 		});
 	q2->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		endgame->enter(); //Å»¶ô
+		endgame->enter(); //íƒˆë½
 		return true;
 		});
 	q3->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		game3s->enter(); //´ÙÀ½ °ÔÀÓ ÁøÃâ
-		showMessage("¸¶Áö¸· °ÔÀÓ±îÁö ÇÏ½Ç°Ì´Ï±î?");
+		game3s->enter(); //ë‹¤ìŒ ê²Œì„ ì§„ì¶œ
+		showMessage("ë§ˆì§€ë§‰ ê²Œì„ê¹Œì§€ í•˜ì‹¤ê²ë‹ˆê¹Œ?");
 		return true;
 		});
 	q4->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		endgame->enter(); //Å»¶ô
+		endgame->enter(); //íƒˆë½
 		return true;
 		});
 
 
-	//¼¼¹øÂ° °ÔÀÓ : È¦Â¦
+	//ì„¸ë²ˆì§¸ ê²Œì„ : í™€ì§
 	auto nextlevel_a = Object::create("Images/nextlevel_1.png", game3s, 250, 110);
 	auto nextlevel_b = Object::create("Images/nextlevel_2.png", game3s, 643, 110);
 	nextlevel_a->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		game3->enter(); //¸¶Áö¸· °ÔÀÓ		
+		game3->enter(); //ë§ˆì§€ë§‰ ê²Œì„		
 		return true;
 		});
 	nextlevel_b->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-		giveup->enter(); //ÁßµµÆ÷±â
+		giveup->enter(); //ì¤‘ë„í¬ê¸°
 		return true;
 		});
 	auto start_3 = Object::create("Images/start3.png", game3, 500, 300);
@@ -194,7 +194,7 @@ int main()
 			m5->hide();
 			m6->hide();
 			m7->hide();
-			showMessage("¸î¸íÀÇ »ç¶÷µéÀÌ ÀÖ¾ú½À´Ï±î?");
+			showMessage("ëª‡ëª…ì˜ ì‚¬ëŒë“¤ì´ ìˆì—ˆìŠµë‹ˆê¹Œ?");
 			showKeypad("0007", Final);
 			return true;
 			});
@@ -205,18 +205,12 @@ int main()
 
 	Final->setOnKeypadCallback([&](ObjectPtr object)->bool {
 		Final_s->enter();
-		showMessage("ÃàÇÏµå¸³´Ï´Ù. ¸ğµç °ÔÀÓ¿¡ Åë°úÇÏ¼Ì½À´Ï´Ù.");
-		auto restart = Object::create("Images/restart.png", Final_s, 750, 400);
+		showMessage("ì¶•í•˜ë“œë¦½ë‹ˆë‹¤. ëª¨ë“  ê²Œì„ì— í†µê³¼í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		auto endding = Object::create("Images/endding_button.png", Final_s, 950, 400);
-		restart->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
-			scene1->enter(); //´Ù½Ã½ÃÀÛ
-			return true;
-			});
-
 		endding->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
 			endGame();
 			return true;
-			});
+		});
 
 		return true;
 		});
