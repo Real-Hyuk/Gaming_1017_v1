@@ -1,4 +1,4 @@
-#include <bangtal>
+﻿#include <bangtal>
 #include <Timer.h>
 #include <windows.h>
 using namespace bangtal;
@@ -80,7 +80,7 @@ int main()
 			});
 
 		return true;
-	});
+		});
 
 	timer1->setOnTimerCallback([&](TimerPtr timer)->bool {
 		endButton->show();
@@ -97,11 +97,11 @@ int main()
 		showMessage("이 배우의 이름은 다니엘 크레이그이다.");
 		return true;
 		});
-	
-	
+
+
 	auto quiz1 = Object::create("Images/quiz1.png", game2, 300, 73); //1번문제 그림
 	auto quiz2 = Object::create("Images/quiz2.png", game2_2, 450, 73); //2번문제 그림
-	
+
 
 	//1번문제
 	auto O_button = Object::create("Images/O.png", game2, 450, 10);
@@ -170,7 +170,7 @@ int main()
 		return true;
 		});
 	auto start_3 = Object::create("Images/start3.png", game3, 500, 300);
-	
+
 	auto timer3 = Timer::create(0.5f);
 	auto Final = Object::create("Images/Final.png", game3, 500, 300);
 
@@ -185,7 +185,7 @@ int main()
 		auto m5 = Object::create("Images/man.png", game3, 423, 394);
 		auto m6 = Object::create("Images/man.png", game3, 872, 324);
 		auto m7 = Object::create("Images/man.png", game3, 101, 211);
-		
+
 		timer3->setOnTimerCallback([&](TimerPtr restartT)->bool {
 			m1->hide();
 			m2->hide();
@@ -198,7 +198,7 @@ int main()
 			showKeypad("0007", Final);
 			return true;
 			});
-		
+
 		return true;
 		});
 
@@ -210,7 +210,7 @@ int main()
 		endding->setOnMouseCallback([&](ObjectPtr object, int x, int y, MouseAction action)->bool {
 			endGame();
 			return true;
-		});
+			});
 
 		return true;
 		});
